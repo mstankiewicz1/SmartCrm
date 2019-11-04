@@ -7,6 +7,7 @@ const Customer = (props) => {
         <div>
             <li>{props.name}</li>
             <li>{props.surname}</li>
+            <li>{props.pesel}</li>
         </div>
 
     )

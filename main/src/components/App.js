@@ -7,7 +7,8 @@ import Customer from './Customer';
 class App extends React.Component {
 
     state = {
-        customers: []
+        customers: [],
+        isLoaded: false
     };
 
     componentDidMount(){
@@ -15,7 +16,8 @@ class App extends React.Component {
         .then( response => response.json())
         .then( data => {
             this.setState({
-                customers: data.customers
+                customers: data.customers,
+                isLoaded: true
             })
         })
     }
@@ -23,9 +25,13 @@ class App extends React.Component {
 
 
     render() {
+
+        console.log("renderrr");
+
         const customers = this.state.customers.map( customer => (
             <Customer
                 key={customer.id}
+                pesel={customer.pesel}
                 name={customer.name}
                 surname={customer.surname}
             />
@@ -35,7 +41,7 @@ class App extends React.Component {
             <div>
                 <h1>SmartCrm działa!</h1>
                 <ul>
-                    {customers}
+                    {this.state.isLoaded ? customers : "...Wczytuję dane"}
                 </ul>
             </div>
         )

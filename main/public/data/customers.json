@@ -2,16 +2,19 @@
   "customers": [
     {
       "id": 0,
+      "pesel": 11111111111,
       "name": "Jan",
       "surname": "Kowalski"
     },
     {
       "id": 1,
+      "pesel": 22222222222,
       "name": "Anna",
       "surname": "Nowak"
     },
     {
       "id": 2,
+      "pesel": 33333333333,
       "name": "Henryk",
       "surname": "Sienkiewicz"
     }
