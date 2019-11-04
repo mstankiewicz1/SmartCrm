@@ -22535,6 +22535,10 @@ var _react = __webpack_require__(49);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Customer = __webpack_require__(188);
+
+var _Customer2 = _interopRequireDefault(_Customer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22547,14 +22551,41 @@ var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
     function App() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            customers: [{
+                "id": 0,
+                "name": "Jan",
+                "surname": "Kowalski"
+            }, {
+                "id": 1,
+                "name": "Anna",
+                "surname": "Nowak"
+            }, {
+                "id": 2,
+                "name": "Henryk",
+                "surname": "Sienkiewicz"
+            }]
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(App, [{
         key: 'render',
         value: function render() {
+
+            var customers = this.state.customers.map(function (customer) {
+                return _react2.default.createElement(_Customer2.default, null);
+            });
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -22562,6 +22593,11 @@ var App = function (_React$Component) {
                     'h1',
                     null,
                     'SmartCrm dzia\u0142a!'
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    customers
                 )
             );
         }
@@ -22571,6 +22607,34 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Customer = function Customer(props) {
+
+    return _react2.default.createElement(
+        'li',
+        null,
+        'Slowo'
+    );
+};
+
+exports.default = Customer;
 
 /***/ })
 /******/ ]);
